@@ -16,7 +16,7 @@ class CoinBot:
   def limit_buy_order(self, symbol='BTCUSDT'):
     avg_price_info = self.client.get_avg_price(symbol=symbol)
     avg_price = avg_price_info['price']
-    order_result = self.client.order_limit_buy(symbol=symbol, quantity=1, price=avg_price)
+    return self.client.order_limit_buy(symbol=symbol, quantity=1, price=avg_price)
 
   def get_account_info(self):
     return self.client.get_account()

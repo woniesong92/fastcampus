@@ -1,0 +1,20 @@
+<h1>Users</h1>
+<ul>
+  {% for user in users %}
+  <li><a href="{{ '/users/%s'%user }}">{{ user }}</a></li>
+  {% endfor %}
+</ul>
+
+<h2>Add User</h2>
+<form action="/users" method="POST">
+  <label>User Name</label>
+  <input name="username" type="text" />
+  <button type="submit">Register</button>
+</form>
+
+<form action="{{ '/users/%s/coins'%username }}" method="POST">
+  <select name="symbol">
+    <option>BTC</option>
+    <option>ETH</option>
+  </select>
+</form>

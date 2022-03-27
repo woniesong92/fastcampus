@@ -1,0 +1,29 @@
+<h1>User Coin</h1>
+<h2>User: {{ username }}</h2>
+
+<table>
+  <tr>
+    <th>Symbol</th>
+    <th>Price</th>
+    <th>Delete?</th>
+  </tr>
+  {% for coin in coins %}
+  <tr>
+    <td>{{ coin["symbol"] }}</td>
+    <td>{{ coin["quote"]["USD"]["price"] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>Coins</h2>
+<form action="{{ form_url }}" method="POST">
+  <label>Symbol</label>
+  <form>
+    <select name="symbol">
+      <option value="BTC">BTC</option>
+      <option value="ETH">ETH</option>
+      <option value="ETH">LTC</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+</form>
